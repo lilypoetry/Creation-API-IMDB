@@ -24,9 +24,15 @@ $db = new PDO(
     [
         // Gestion des erreurs
         PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING,
+        
         // Gestion du jeu de caractères
         PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
+
         // Choix des retours des résultats
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+
+        // Affiche systématiquement le nombre de ligne affectée
+        // par une requête SQL
+        PDO::MYSQL_ATTR_FOUND_ROWS => true
     ]
 );
